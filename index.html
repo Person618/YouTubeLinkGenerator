@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Link Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #cc0000;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>YouTube Link Generator</h1>
+    <input type="text" id="channelInput" placeholder="Enter channel/page name" />
+    <button id="generateLink">Generate Link</button>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('generateLink').addEventListener('click', function() {
+            const input = document.getElementById('channelInput').value;
+            const result = `https://youtube.com/${input}`;
+            document.getElementById('result').innerHTML = `<a href="${result}" target="_blank">${result}</a>`;
+        });
+    </script>
+
+</body>
+</html>
